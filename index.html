@@ -151,25 +151,27 @@
             border: 2px solid var(--text);
         }
 
-        .contact-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 70vh;
-        text-align: center;
-    }
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-    .email-btn {
-        text-decoration: none;
-        margin-top: 2rem;
-    }
+        input, textarea {
+            padding: 1rem;
+            border: 2px solid var(--text);
+            background: transparent;
+            width: 100%;
+        }
 
-    /* Optional: Add hover effect */
-    .email-btn:hover button {
-        background: var(--text);
-        color: var(--bg);
-    }
+        button[type="submit"] {
+            padding: 1rem 2rem;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            cursor: pointer;
+        }
 
         .particles {
             position: fixed;
@@ -261,12 +263,12 @@
         </div>
     </div>
 
- <!-- Contact Panel -->
+    <!-- Contact Panel -->
     <div class="panel" id="contactPanel">
         <button class="back-btn">← Back</button>
         <h2>Contact</h2>
-        <form class="contact-form" id="contactForm">
-            <!-- <input type="text" placeholder="Name" required>
+        <!-- <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Name" required>
             <input type="email" placeholder="Email" required>
             <textarea rows="5" placeholder="Message" required></textarea> -->
             <a href="mailto:saykwko@gmail.com" class="email-btn">
@@ -274,8 +276,6 @@
             </a>
         </form>
     </div>
-
-
 
     <script>
         // Theme Management
@@ -323,12 +323,12 @@
             btn.addEventListener('click', closePanels);
         });
 
-        // Form Handling
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Message sent successfully!');
-            closePanels();
-        });
+        // // Form Handling
+        // document.getElementById('contactForm').addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     alert('Message sent successfully!');
+        //     closePanels();
+        // });
 
         // Particles
         function createParticles() {
